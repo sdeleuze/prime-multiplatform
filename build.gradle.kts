@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
+
 plugins {
     kotlin("multiplatform") version "1.8.0"
 }
@@ -22,6 +25,10 @@ kotlin {
             }
         }
     }
+    wasm {
+        binaries.executable()
+        nodejs()
+    }
     sourceSets {
         val commonMain by getting
     }
@@ -29,4 +36,8 @@ kotlin {
 
 repositories {
     mavenCentral()
+}
+
+rootProject.plugins.withType(NodeJsRootPlugin::class.java) {
+    rootProject.the<NodeJsRootExtension>().nodeVersion = "19.0.0"
 }
