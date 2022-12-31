@@ -10,13 +10,13 @@ It is based on simple program generating pairs of twin primes from https://discu
 
 ## Data points
 
-| Platform                     | Build time | Execution time | Artifact size |
-|------------------------------|------------|----------------|---------------|
-| Kotlin/JVM                   | 3.6s       | 1m13s          | 1.9MB + JDK   |
-| Kotlin/JVM GraalVM CE native | 15.9s      | 1m40s          | 12.4MB        |
-| Kotlin/JVM GraalVM EE native | 16.5s      | 1m33s          | 6.8MB         |
-| Kotlin/Native                | 9s         | 1m37s          | 570.4 KB      |
-| Kotlin/Wasm (preview)        | 5s         | 2m49s          | 183.3 KB      |
+| Platform            | Build time | Execution time | Artifact size |
+|---------------------|------------|----------------|---------------|
+| Kotlin/JVM          | 3.6s       | 1m13s          | 1.9 MB + JDK  |
+| GraalVM CE native   | 15.9s      | 1m40s          | 12.4 MB       |
+| GraalVM EE native   | 16.5s      | 1m33s          | 6.8 MB        |
+| Kotlin/Native       | 9s         | 1m37s          | 0.57 MB       |
+| Kotlin/Wasm preview | 5s         | 2m49s          | 0.18 MB       |
 
 ## Environment
 - Linux 5.15.85-1-lts x86_64
