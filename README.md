@@ -61,7 +61,7 @@ Compile
 ```
 Run
 ```
-java -jar target/prime-multiplatform-1.0-SNAPSHOT-jar-with-dependencies.jar
+./build/bin/native/releaseExecutable/prime-multiplatform.kexe
 ```
 
 ### Kotlin/Wasm
