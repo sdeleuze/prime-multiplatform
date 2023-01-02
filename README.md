@@ -27,6 +27,8 @@ It is based on simple program generating pairs of twin primes from https://discu
 
 ## Getting started
 
+[![Compile and run](https://github.com/sdeleuze/prime-multiplatform/actions/workflows/main.yml/badge.svg)](https://github.com/sdeleuze/prime-multiplatform/actions/workflows/main.yml)
+
 Notice I was not able to use a single Gradle multiplatform build due to a conflict between Kotlin/Native and Native Build Tools plugins. 
 
 ### Kotlin/JVM
