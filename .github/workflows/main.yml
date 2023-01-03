@@ -14,21 +14,19 @@ jobs:
           native-image-job-reports: 'true'
 
       - name: "Compile: Kotlin/JVM"
-        run: ./mvnw --no-transfer-progress clean package
+        run: ./mvnw --no-transfer-progress package
+      - name: "Compile: Kotlin/JVM with GraalVM Native Image"
+        run: ./mvnw --no-transfer-progress native:compile
+      - name: "Compile: Kotlin/Native"
+        run: ./gradlew linkReleaseExecutableNative
+      - name: "Compile: Kotlin/Wasm"
+        run: ./gradlew compileProductionExecutableKotlinWasm
+
       - name: "Run: Kotlin/JVM"
         run: /usr/bin/time -v java -jar target/prime-multiplatform-1.0-SNAPSHOT-jar-with-dependencies.jar
-
-      - name: "Compile: Kotlin/JVM with GraalVM Native Image"
-        run: ./mvnw --no-transfer-progress clean native:compile
       - name: "Run: Kotlin/JVM with GraalVM Native Image"
         run: /usr/bin/time -v target/prime-multiplatform
-
-      - name: "Compile: Kotlin/Native"
-        run: ./gradlew clean linkReleaseExecutableNative
       - name: "Run: Kotlin/Native"
-        run: /usr/bin/time -v java -jar target/prime-multiplatform-1.0-SNAPSHOT-jar-with-dependencies.jar
-
-      - name: "Compile: Kotlin/Wasm"
-        run: ./gradlew clean wasmMainClasses
+        run: /usr/bin/time -v build/bin/native/releaseExecutable/prime-multiplatform.kexe
       - name: "Run: Kotlin/Wasm"
         run: /usr/bin/time -v ./gradlew wasmNodeProductionRun
