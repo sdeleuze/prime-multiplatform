@@ -68,7 +68,7 @@ build/bin/native/releaseExecutable/prime-multiplatform.kexe
 
 Compile
 ```
-./gradlew clean wasmMainClasses
+./gradlew clean compileProductionExecutableKotlinWasm
 ```
 Run
 ```
